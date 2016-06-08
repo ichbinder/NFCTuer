@@ -92,6 +92,10 @@ void setup(void) {
     Serial.println("Waiting for an ISO14443A Card ...");
     blinkResponse(10,500);
     Serial.println("INIT nfc.SAMConfig() DONE");
+
+      // initialize digital pin 13 as an output.
+  pinMode(13, OUTPUT);
+  blinkResponse(30,5);
 }
 
 
@@ -140,14 +144,14 @@ void loop(void) {
               //blink 5Hz
               Serial.println("blink 5.0 Hz");
               blinkResponse(5, 500);
-              waitingForServerResponse = true;
+              waitingForServerResponse = false;
           }
           else if (inputFromSrv.equalsIgnoreCase("DENIED")) {
               Serial.println("--ACCESS DENIED--");
               //blink 0.5 Hz
               Serial.println("blink 0.5 Hz");
               blinkResponse(5, 50);
-              waitingForServerResponse = true;
+              waitingForServerResponse = false;
           }
           else {
             Serial.println("UNKOWN COMMAND from Server");
