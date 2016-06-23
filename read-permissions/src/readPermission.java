@@ -2,6 +2,7 @@
 import java.io.FileReader;
 import java.util.Iterator;
 
+import com.sun.tools.javac.file.RelativePath;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,16 +17,16 @@ public class readPermission {
         JSONParser parser = new JSONParser();
 
         try {
-
-            Object obj = parser.parse(new FileReader("permissions.txt"));
+            Object obj = parser.parse(new FileReader(
+                    RelativePath.RelativeFile.class.getClassLoader().getResource("permissions.txt").getPath()));
 
             JSONObject jsonObject = (JSONObject) obj;
 
-            String name = (String) jsonObject.get("Room Permissions Database");
-            JSONArray permissionDatabase = (JSONArray) jsonObject.get("user permission");
+            String name = (String) jsonObject.get("Name");
+            JSONArray permissionDatabase = (JSONArray) jsonObject.get("user permissions");
 
             System.out.println("Name: " + name);
-            System.out.println("\nCompany List:");
+            System.out.println("\nuser permissions:");
             Iterator<String> iterator = permissionDatabase.iterator();
             while (iterator.hasNext()) {
                 System.out.println(iterator.next());

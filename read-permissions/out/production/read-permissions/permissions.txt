@@ -1,6 +1,6 @@
 {
     "Name": "Room Permissions Database",
-    "user permission": [
+    "user permissions": [
         "123456: 0",
         "123456: 1",
         "123456: 0",
