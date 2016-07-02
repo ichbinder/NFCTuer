@@ -1,0 +1,9 @@
+{
+    "Name": "Room Permissions Database",
+    "user permissions": [
+        "arend:1",
+        "arend:2",
+        "konrad:1",
+        "jakob:2",
+    ]
+}
