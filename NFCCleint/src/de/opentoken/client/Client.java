@@ -1,4 +1,4 @@
-package de.opentoken;
+package de.opentoken.client;
 
 
 import java.net.*;
